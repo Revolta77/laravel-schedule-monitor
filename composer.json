@@ -1,13 +1,13 @@
 {
   "name": "revolta77/laravel-schedule-monitor",
   "description": "Monitor the output of scheduled tasks in a database table",
-  "license": "MIT",
   "authors": [
     {
       "name": "Dusan Rybar",
       "email": "revolta@atlas.sk"
     }
   ],
+  "license": "MIT",
   "require": {
     "illuminate/support": ">=5.3.0",
     "illuminate/database": ">=5.3.0",

@@ -1,4 +1,4 @@
-t<?php
+<?php
 
 namespace Revolta77\ScheduleMonitor;
 
