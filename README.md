@@ -1,5 +1,8 @@
-# laravel-schedule-monitor
+# laravel-schedule-monitor-extended
 Track the output of your scheduled tasks in a database table.
+
+## Fork
+This is extend version of https://github.com/mirzabusatlic/laravel-schedule-monitor
 
 ## Installation
 
