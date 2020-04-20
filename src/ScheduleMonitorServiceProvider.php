@@ -1,6 +1,6 @@
-<?php
+t<?php
 
-namespace Busatlic\ScheduleMonitor;
+namespace Revolta77\ScheduleMonitor;
 
 use Illuminate\Support\ServiceProvider;
 
