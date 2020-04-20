@@ -64,3 +64,7 @@ Whenever a scheduled command is then run, the its output will be inserted into t
 | Logged | Command | Output
 |---|---|---|
 | 2016-07-11 02:21:38 | files:delete | Deleted (6391/6391) total files.
+
+Important Note: This plugin is licensed under MIT license. Even if you forbid
+to use MIT licensed packages in your project the plugin itself is the only package
+it would not complain about (otherwise further checking would not work obviously).
