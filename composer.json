@@ -1,10 +1,10 @@
 {
-  "name": "mirzabusatlic/laravel-schedule-monitor",
+  "name": "revolta77/laravel-schedule-monitor",
   "description": "Monitor the output of scheduled tasks in a database table",
   "authors": [
     {
-      "name": "Mirza Busatlic",
-      "email": "mirza.busatlic@gmail.com"
+      "name": "Dusan Rybar",
+      "email": "revolta@atlas.sk"
     }
   ],
   "require": {
@@ -17,7 +17,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Busatlic\\ScheduleMonitor\\": "src/"
+      "Revolta\\ScheduleMonitor\\": "src/"
     }
   },
   "autoload-dev": {
