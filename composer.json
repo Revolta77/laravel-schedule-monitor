@@ -17,7 +17,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Revolta\\ScheduleMonitor\\": "src/"
+      "Revolta77\\ScheduleMonitor\\": "src/"
     }
   },
   "autoload-dev": {
