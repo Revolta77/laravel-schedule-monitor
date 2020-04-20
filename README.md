@@ -3,14 +3,14 @@ Track the output of your scheduled tasks in a database table.
 
 ## Installation
 
-1. Install through composer: `composer require mirzabusatlic/laravel-schedule-monitor`
-2. Add `Busatlic\ScheduleMonitor\ScheduleMonitorServiceProvider::class` to your list of `$providers` in to your `config/app.php`.
-3. Publish the migration using `php artisan vendor:publish --provider=Busatlic\\ScheduleMonitor\\ScheduleMonitorServiceProvider`.
-4. Run `php artisan migrate` to create the `scheduled_events` table in your database.
+1. Install through composer: `composer require revolta77/laravel-schedule-monitor`
+2. Add `Revolta77\ScheduleMonitor\ScheduleMonitorServiceProvider::class` to your list of `$providers` in to your `config/app.php`.
+3. Publish the migration using `php artisan vendor:publish --provider=Revolta77\\ScheduleMonitor\\ScheduleMonitorServiceProvider`.
+4. Run `php artisan migrate` to create tables in your database.
 
 ## Usage
 
-- In your `app/Console/Kernel.php`, include the `Busatlic\ScheduleMonitor\MonitorsSchedule` trait.
+- In your `app/Console/Kernel.php`, include the `Revolta77\ScheduleMonitor\MonitorsSchedule` trait.
 - Call `$this->monitor($schedule)` after you've defined your scheduled commands in `schedule()`.
 
 This will look something like:
@@ -20,7 +20,7 @@ This will look something like:
 
 namespace App\Console;
 
-use Busatlic\ScheduleMonitor\MonitorsSchedule;
+use Revolta77\ScheduleMonitor\MonitorsSchedule;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -56,7 +56,7 @@ class Kernel extends ConsoleKernel
 }
 ```
 
-Whenever a scheduled command is then run, the its output will be inserted into the `scheduled_events` table.
+Whenever a scheduled command is then run, the its output will be inserted into table.
 
 | Logged | Command | Output
 |---|---|---|
