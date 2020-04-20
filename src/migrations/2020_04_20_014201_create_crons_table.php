@@ -21,7 +21,7 @@ class CreateCronsTable extends Migration
             $table->text('description')->nullable();
             $table->text('parameters')->nullable();
             $table->text('expression')->nullable();
-			$table->text('timezone')->default('UTC');
+			$table->text('timezone');
 			$table->tinyInteger('is_active');
 			$table->tinyInteger('dont_overlap');
 			$table->tinyInteger('run_in_maintenance');
