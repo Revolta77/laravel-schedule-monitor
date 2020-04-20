@@ -1,6 +1,6 @@
 <?php
 
-namespace Busatlic\ScheduleMonitor;
+namespace Revolta77\ScheduleMonitor;
 
 use Carbon\Carbon;
 use Illuminate\Console\Scheduling\Event;
