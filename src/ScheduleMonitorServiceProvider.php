@@ -23,11 +23,12 @@ class ScheduleMonitorServiceProvider extends ServiceProvider
 //				__DIR__.'/views'                     => resource_path('views/vendor/scheduler'),
 			]);
 
+
 			$create = CreateController::create();
 
-			$this->commands([
-				Console\Commands\CreateController::class,
-			]);
+//			$this->commands([
+//				Console\Commands\CreateController::class,
+//			]);
 		}
     }
 }
