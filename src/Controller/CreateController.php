@@ -41,7 +41,7 @@ class CreateController extends Controller
 				'command' => $command,
 				'next_run_at' => $next,
 				'run_at' => $run,
-				'description'   => $event->description ?: NULL,
+				'description'   => $this->getDescriptionFromCommand($command) ?: NULL,
 				'timezone'      => $event->timezone ?: config('app.timezone', 'UTC'),
 				'overlaps'      => $event->withoutOverlapping ? '0' : '1',
 				'maintenance'   => $event->evenInMaintenanceMode ? '0' : '1',
@@ -67,6 +67,22 @@ class CreateController extends Controller
 		}
 
 		echo "Tasks successfully created. /n";
+	}
+
+	private function getDescriptionFromCommand(string $commandName): string
+	{
+		$commands = $this->consoleKernel->all();
+		if (!isset($commands[$commandName])) {
+			return '';
+		}
+
+		try {
+			$className = get_class($commands[$commandName]);
+			$reflection = new \ReflectionClass($className);
+			return (string)$reflection->getDefaultProperties()['description'];
+		} catch (\ReflectionException $exception) {
+			return '';
+		}
 	}
 
 }
