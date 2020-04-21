@@ -9,6 +9,7 @@ use Cron\CronExpression;
 use Illuminate\Contracts\Console\Kernel as kernel;
 use Illuminate\Http\Request;
 use Revolta77\ScheduleMonitor\Cron;
+use Illuminate\Support\Facades\Schema;
 
 class CreateController extends Controller
 {
