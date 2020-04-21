@@ -37,6 +37,7 @@ class CreateController extends Controller
 				$date->setTimezone($event->timezone);
 			}
 			$next = $cron->getNextRunDate()->format('Y-m-d H:i:s');
+//			dd($next);
 			$prev = $cron->getPreviousRunDate()->format('Y-m-d H:i:s');
 			$mid      = (strtotime($next) + strtotime($prev)) / 2;
 			$mid       = round($mid);
@@ -45,22 +46,22 @@ class CreateController extends Controller
 			return (object)[
 				'expression' => $event->expression,
 				'command' => $command,
-				'next_run_at' => $next,
 				'run_at' => $run,
+				'next_run_at' => $next,
 				'description'   => $this->getDescriptionFromCommand($command) ?: NULL,
 				'timezone'      => $event->timezone ?: config('app.timezone', 'UTC'),
-				'overlaps'      => $event->withoutOverlapping ? '0' : '1',
-				'maintenance'   => $event->evenInMaintenanceMode ? '0' : '1',
+				'overlaps'      => $event->withoutOverlapping ? '1' : '0',
+				'maintenance'   => $event->evenInMaintenanceMode ? '1' : '0',
 			];
 		});
 
 		if( !empty( $events ) ) foreach ( $events as $event ){
+//			dd($event);
 			Cron::query()->update([ 'is_active' => 0 ]);
 			Cron::updateOrCreate([ 'command' => $event->command ], [
 				'success' => 0,
 				'error' => 0,
 				'description' => $event->description,
-				'parameters' => $event->parameters,
 				'expression' => $event->expression,
 				'timezone' => $event->timezone,
 				'run_at' => $event->run_at,
