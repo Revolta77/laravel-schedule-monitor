@@ -55,7 +55,7 @@ class CreateController extends Controller
 		});
 
 		if( !empty( $events ) ) foreach ( $events as $event ){
-			Cron::update([ 'is_active' => 0 ]);
+			Cron::query()->update([ 'is_active' => 0 ]);
 			Cron::updateOrCreate([ 'command' => $event->command ], [
 				'success' => 0,
 				'error' => 0,
