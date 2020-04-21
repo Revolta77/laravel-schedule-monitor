@@ -27,5 +27,4 @@ class ScheduleMonitorServiceProvider extends ServiceProvider
 			]);
 		}
     }
-
 }
