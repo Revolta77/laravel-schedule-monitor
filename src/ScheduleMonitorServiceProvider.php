@@ -3,6 +3,7 @@
 namespace Revolta77\ScheduleMonitor;
 
 use Illuminate\Support\ServiceProvider;
+use Revolta77\ScheduleMonitor\Controllers\CreateController;
 
 class ScheduleMonitorServiceProvider extends ServiceProvider
 {
@@ -22,8 +23,10 @@ class ScheduleMonitorServiceProvider extends ServiceProvider
 //				__DIR__.'/views'                     => resource_path('views/vendor/scheduler'),
 			]);
 
+			$create = CreateController::create();
+
 			$this->commands([
-				Console\Commands\Create::class,
+				Console\Commands\CreateController::class,
 			]);
 		}
     }
