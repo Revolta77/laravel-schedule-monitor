@@ -14,6 +14,12 @@ use Illuminate\Console\Scheduling\Schedule;
 
 class CreateController extends Controller
 {
+	private $consoleKernel;
+
+	public function __construct(kernel $consoleKernel) {
+		$this->consoleKernel = $consoleKernel;
+	}
+
 	public function index() {
 		if ( !Schema::hasTable('crons') && !Schema::hasTable('cron_loggers') ) {
 			echo "Tables for scheduled tasks does not exist. /n";
