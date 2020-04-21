@@ -3,7 +3,6 @@
 namespace Revolta77\ScheduleMonitor;
 
 use Illuminate\Support\ServiceProvider;
-use Revolta77\ScheduleMonitor\Console\Commands\Create;
 
 class ScheduleMonitorServiceProvider extends ServiceProvider
 {
