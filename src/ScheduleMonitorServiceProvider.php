@@ -22,9 +22,11 @@ class ScheduleMonitorServiceProvider extends ServiceProvider
 //				__DIR__.'/views'                     => resource_path('views/vendor/scheduler'),
 //			]);
 
-			$this->commands([
-				Console\Commands\Create::class,
-			]);
+			app('Revolta77\ScheduleMonitor\Conntroller\CreateController')->index();
+
+//			$this->commands([
+//				Console\Commands\CreateController::class,
+//			]);
 		}
     }
 }
