@@ -22,12 +22,11 @@ class CreateCronsTable extends Migration
             $table->text('parameters')->nullable();
             $table->text('expression')->nullable();
 			$table->text('timezone');
+			$table->dateTime('run_at')->nullable();
+			$table->dateTime('next_run_at')->nullable();
 			$table->tinyInteger('is_active');
-			$table->tinyInteger('dont_overlap');
-			$table->tinyInteger('run_in_maintenance');
-			$table->text('notification_email_address')->nullable();
-			$table->text('notification_phone_number')->nullable();
-			$table->text('notification_slack_webhook')->nullable();
+			$table->tinyInteger('overlaps');
+			$table->tinyInteger('maintenance');
 
             $table->timestamps();
         });

@@ -13,6 +13,18 @@ class ScheduleMonitorServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->loadMigrationsFrom(__DIR__ . '/migrations');
+		if ( $this->app->runningInConsole() ) {
+			$this->loadMigrationsFrom(__DIR__.'/migrations');
+
+			$this->publishes([
+				__DIR__.'/config/schedule-monitor.php'      => config_path('schedule-monitor.php'),
+//				__DIR__.'/console/CronTasksList.php' => app_path('Console/CronTasksList.php'),
+//				__DIR__.'/views'                     => resource_path('views/vendor/scheduler'),
+			]);
+
+			$this->commands([
+				Console\Commands\Create::class,
+			]);
+		}
     }
 }
