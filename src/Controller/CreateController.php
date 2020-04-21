@@ -1,6 +1,6 @@
 <?php
 
-namespace Revolta77\ScheduleMonitor\Controller;
+namespace Revolta77\ScheduleMonitor\Controllers;
 
 use App\Console\ScheduleService;
 use App\Http\Controllers\Controller;
